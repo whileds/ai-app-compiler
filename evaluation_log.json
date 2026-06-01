@@ -1,0 +1,13 @@
+[
+  {
+    "prompt": "Build CRM with whatsapp notifications",
+    "success": true,
+    "failed_stage": null,
+    "repair_used": false,
+    "latency_ms": 120,
+    "estimated_cost": 0.004,
+    "integrations_detected": [
+      "whatsapp"
+    ]
+  }
+]

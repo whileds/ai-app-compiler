@@ -1,15 +1,16 @@
-def repair_schema(data):
+def repair_appspec(appspec, validation_errors):
 
-    if "app_name" not in data:
-        data["app_name"] = "Recovered App"
+    for error in validation_errors:
 
-    if "pages" not in data:
-        data["pages"] = []
+        if error["type"] == "PAGE_API_MISMATCH":
 
-    if "apis" not in data:
-        data["apis"] = []
+            entity = error["message"].split("for ")[1]
 
-    if "database" not in data:
-        data["database"] = []
+            appspec["apiEndpoints"].append({
+                "path": f"/api/{entity.lower()}",
+                "method": "GET",
+                "entity": entity,
+                "authRequired": True
+            })
 
-    return data
+    return appspec

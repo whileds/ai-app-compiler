@@ -1,37 +1,62 @@
-# AI App Compiler
+# OneAtlas AI Generation Pipeline
 
-A multi-stage AI system that converts natural language into structured application schemas.
+AI-powered multi-stage application generation pipeline.
+
+## Overview
+
+This system converts natural language prompts into structured application specifications.
+
+Pipeline stages:
+
+1. Intent Extraction
+2. Schema Generation
+3. AppSpec Generation
+4. Validation Layer
+5. Repair Engine
+
+The system generates:
+- entities
+- database schema
+- pages
+- API endpoints
+- auth rules
+- workflow stubs
+- integration hooks
+
+---
 
 ## Features
 
-- Intent Extraction
-- Schema Generation
-- Validation Engine
-- Repair Engine
-- Deterministic JSON Output
-- Executable FastAPI Runtime
+- Multi-stage pipeline architecture
+- Validation engine
+- Automatic repair engine
+- Integration registry
+- Workflow stub generation
+- Cost tracking
+- Latency tracking
 
-## Tech Stack
+---
 
-- FastAPI
-- Python
-- Pydantic
+## Supported Integrations
 
-## Run Locally
+- Slack
+- WhatsApp
+- Gmail
+- Stripe
+- Jira
 
-```bash
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
+---
 
-## API Endpoint
+## API Endpoints
 
-POST `/generate`
+
+### Generate AppSpec
+
+POST `/api/generate`
 
 Example:
 
 ```json
 {
-  "prompt": "Build CRM with login and dashboard"
+  "prompt": "Build CRM with whatsapp notifications"
 }
-```
